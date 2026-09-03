@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Passing data · Liquid.jl</title><meta name="title" content="Passing data · Liquid.jl"/><meta property="og:title" content="Passing data · Liquid.jl"/><meta property="twitter:title" content="Passing data · Liquid.jl"/><meta name="description" content="Documentation for Liquid.jl."/><meta property="og:description" content="Documentation for Liquid.jl."/><meta property="twitter:description" content="Documentation for Liquid.jl."/><meta property="og:url" content="https://dantebertuzzi.github.io/Liquid.jl/data/"/><meta property="twitter:url" content="https://dantebertuzzi.github.io/Liquid.jl/data/"/><link rel="canonical" href="https://dantebertuzzi.github.io/Liquid.jl/data/"/><script data-outdated-warner src="../assets/warner.js"></script><link href="https://cdnjs.cloudflare.com/ajax/libs/lato-font/3.0.0/css/lato-font.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/juliamono/0.63.2/juliamono.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/fontawesome.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/solid.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/brands.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.8/katex.min.css" rel="stylesheet" type="text/css"/><script>documenterBaseURL=".."</script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" data-main="../assets/documenter.js"></script><script src="../search_index.js"></script><script src="../siteinfo.js"></script><script src="../../versions.js"></script><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../assets/themes/catppuccin-mocha.css" data-theme-name="catppuccin-mocha"/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../assets/themes/catppuccin-macchiato.css" data-theme-name="catppuccin-macchiato"/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../assets/themes/catppuccin-frappe.css" data-theme-name="catppuccin-frappe"/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../assets/themes/catppuccin-latte.css" data-theme-name="catppuccin-latte"/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../assets/themes/documenter-dark.css" data-theme-name="documenter-dark" data-theme-primary-dark/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../assets/themes/documenter-light.css" data-theme-name="documenter-light" data-theme-primary/><script src="../assets/themeswap.js"></script></head><body><div id="documenter"><nav class="docs-sidebar"><a class="docs-logo" href="../"><img src="../assets/logo.png" alt="Liquid.jl logo"/></a><div class="docs-package-name"><span class="docs-autofit"><a href="../">Liquid.jl</a></span></div><button class="docs-search-query input is-rounded is-small is-clickable my-2 mx-auto py-1 px-2" id="documenter-search-query">Search docs (Ctrl + /)</button><ul class="docs-menu"><li><a class="tocitem" href="../">Home</a></li><li class="is-active"><a class="tocitem" href>Passing data</a><ul class="internal"><li><a class="tocitem" href="#Accepted-shapes"><span>Accepted shapes</span></a></li><li><a class="tocitem" href="#Lookups"><span>Lookups</span></a></li><li><a class="tocitem" href="#Virtual-properties"><span>Virtual properties</span></a></li><li><a class="tocitem" href="#Exposing-your-own-types"><span>Exposing your own types</span></a></li><li><a class="tocitem" href="#Rendering-to-an-IO"><span>Rendering to an IO</span></a></li></ul></li><li><a class="tocitem" href="../templates/">Template reference</a></li><li><a class="tocitem" href="../extending/">Extending</a></li><li><a class="tocitem" href="../api/">API</a></li></ul><div class="docs-version-selector field has-addons"><div class="control"><span class="docs-label button is-static is-size-7">Version</span></div><div class="docs-selector control is-expanded"><div class="select is-fullwidth is-size-7"><select id="documenter-version-selector"></select></div></div></div></nav><div class="docs-main"><header class="docs-navbar"><a class="docs-sidebar-button docs-navbar-link fa-solid fa-bars is-hidden-desktop" id="documenter-sidebar-button" href="#"></a><nav class="breadcrumb"><ul class="is-hidden-mobile"><li class="is-active"><a href>Passing data</a></li></ul><ul class="is-hidden-tablet"><li class="is-active"><a href>Passing data</a></li></ul></nav><div class="docs-right"><a class="docs-navbar-link" href="https://github.com/dantebertuzzi/Liquid.jl" title="View the repository on GitHub"><span class="docs-icon fa-brands"></span><span class="docs-label is-hidden-touch">GitHub</span></a><a class="docs-navbar-link" href="https://github.com/dantebertuzzi/Liquid.jl/blob/main/docs/src/data.md" title="Edit source on GitHub"><span class="docs-icon fa-solid"></span></a><a class="docs-settings-button docs-navbar-link fa-solid fa-gear" id="documenter-settings-button" href="#" title="Settings"></a><a class="docs-article-toggle-button fa-solid fa-chevron-up" id="documenter-article-toggle-button" href="javascript:;" title="Collapse all docstrings"></a></div></header><article class="content" id="documenter-page"><h1 id="Passing-data"><a class="docs-heading-anchor" href="#Passing-data">Passing data</a><a id="Passing-data-1"></a><a class="docs-heading-anchor-permalink" href="#Passing-data" title="Permalink"></a></h1><h2 id="Accepted-shapes"><a class="docs-heading-anchor" href="#Accepted-shapes">Accepted shapes</a><a id="Accepted-shapes-1"></a><a class="docs-heading-anchor-permalink" href="#Accepted-shapes" title="Permalink"></a></h2><p>Data reaches a template as keyword arguments, a <code>NamedTuple</code>, or a <code>Dict</code> keyed by strings or symbols. Keys become strings, because that is how a template names them.</p><pre><code class="language-julia-repl hljs">julia&gt; using Liquid
+
+julia&gt; render(&quot;{{ x }}&quot;; x = 1)
+&quot;1&quot;
+
+julia&gt; render(&quot;{{ x }}&quot;, (x = 1,))
+&quot;1&quot;
+
+julia&gt; render(&quot;{{ x }}&quot;, Dict(&quot;x&quot; =&gt; 1))
+&quot;1&quot;
+
+julia&gt; render(&quot;{{ x }}&quot;, Dict(:x =&gt; 1))
+&quot;1&quot;</code></pre><p>Nested values keep their own type, so a <code>Dict</code> inside a <code>NamedTuple</code> works, and an ordered dictionary iterates in its own order.</p><h2 id="Lookups"><a class="docs-heading-anchor" href="#Lookups">Lookups</a><a id="Lookups-1"></a><a class="docs-heading-anchor-permalink" href="#Lookups" title="Permalink"></a></h2><p>Properties are reached with a dot or a subscript. <strong>Subscripts are 0-based</strong>, and count from the end when negative.</p><pre><code class="language-julia-repl hljs">julia&gt; using Liquid
+
+julia&gt; data = Dict(&quot;a&quot; =&gt; Dict(&quot;b&quot; =&gt; Dict(&quot;c&quot; =&gt; 42)));
+
+julia&gt; render(&quot;{{ a.b.c }}&quot;, data)
+&quot;42&quot;
+
+julia&gt; render(&quot;{{ a[&#39;b&#39;][&#39;c&#39;] }}&quot;, data)
+&quot;42&quot;
+
+julia&gt; render(&quot;{{ xs[0] }} {{ xs[2] }} {{ xs[-1] }}&quot;, Dict(&quot;xs&quot; =&gt; [10, 20, 30]))
+&quot;10 30 30&quot;</code></pre><p>A key that is not a valid identifier is reached by writing the subscript with no root at all:</p><pre><code class="language-julia-repl hljs">julia&gt; using Liquid
+
+julia&gt; render(&quot;{{ [\&quot;a b\&quot;] }}&quot;, Dict(&quot;a b&quot; =&gt; &quot;ok&quot;))
+&quot;ok&quot;</code></pre><h2 id="Virtual-properties"><a class="docs-heading-anchor" href="#Virtual-properties">Virtual properties</a><a id="Virtual-properties-1"></a><a class="docs-heading-anchor-permalink" href="#Virtual-properties" title="Permalink"></a></h2><p>Collections answer to <code>size</code>, <code>first</code> and <code>last</code> without those keys existing. A real key of the same name always wins.</p><pre><code class="language-julia-repl hljs">julia&gt; using Liquid
+
+julia&gt; render(&quot;{{ s.size }} {{ s.first }} {{ s.last }}&quot;; s = &quot;hello&quot;)
+&quot;5 h o&quot;
+
+julia&gt; render(&quot;{{ a.size }} {{ a.first }} {{ a.last }}&quot;; a = [3, 2, 1])
+&quot;3 3 1&quot;
+
+julia&gt; render(&quot;{{ o.first }}&quot;, Dict(&quot;o&quot; =&gt; Dict(&quot;first&quot; =&gt; 99)))
+&quot;99&quot;</code></pre><p>A mapping&#39;s <code>first</code> is its first <code>[key, value]</code> pair, and a mapping has no virtual <code>last</code>.</p><h2 id="Exposing-your-own-types"><a class="docs-heading-anchor" href="#Exposing-your-own-types">Exposing your own types</a><a id="Exposing-your-own-types-1"></a><a class="docs-heading-anchor-permalink" href="#Exposing-your-own-types" title="Permalink"></a></h2><p>A struct is <strong>opaque by default</strong>. Until its author says otherwise, every property lookup on it resolves to nil — there is no reflection fallback, so a template cannot name a field that was not listed.</p><pre><code class="language-julia-repl hljs">julia&gt; using Liquid
+
+julia&gt; struct Product
+           title::String
+           price::Float64
+           cost::Float64
+       end
+
+julia&gt; product = Product(&quot;widget&quot;, 9.99, 3.00);
+
+julia&gt; render(&quot;[{{ p.title }}]&quot;; p = product)
+&quot;[]&quot;</code></pre><p>Opt in with <a href="../api/#Liquid.@liquid_drop"><code>@liquid_drop</code></a>, naming exactly the fields templates may read. This is the Julia counterpart of Ruby Liquid&#39;s Drops.</p><pre><code class="language-julia-repl hljs">julia&gt; Liquid.@liquid_drop Product title price
+
+julia&gt; render(&quot;{{ p.title }} costs {{ p.price }}&quot;; p = product)
+&quot;widget costs 9.99&quot;
+
+julia&gt; render(&quot;[{{ p.cost }}]&quot;; p = product)
+&quot;[]&quot;</code></pre><p>The macro is sugar for a <a href="../api/#Liquid.liquid_properties"><code>liquid_properties</code></a> method; write that directly when the list is computed rather than literal:</p><pre><code class="language-julia hljs">Liquid.liquid_properties(::Type{Product}) = (:title, :price)</code></pre><p>For a computed property, add a <a href="../api/#Liquid.liquid_get"><code>liquid_get</code></a> method and fall back to the default for everything else:</p><pre><code class="language-julia-repl hljs">julia&gt; function Liquid.liquid_get(p::Product, key::AbstractString)
+           key == &quot;margin&quot; &amp;&amp; return p.price - p.cost
+           return invoke(Liquid.liquid_get, Tuple{Any,AbstractString}, p, key)
+       end;
+
+julia&gt; render(&quot;{{ p.margin }}&quot;; p = product)
+&quot;6.99&quot;</code></pre><h2 id="Rendering-to-an-IO"><a class="docs-heading-anchor" href="#Rendering-to-an-IO">Rendering to an IO</a><a id="Rendering-to-an-IO-1"></a><a class="docs-heading-anchor-permalink" href="#Rendering-to-an-IO" title="Permalink"></a></h2><p><a href="../api/#Liquid.render"><code>render</code></a> with an <code>IO</code> as its first argument writes directly instead of building a string, which is what you want for a large result.</p><pre><code class="language-julia-repl hljs">julia&gt; using Liquid
+
+julia&gt; io = IOBuffer();
+
+julia&gt; render(io, parse_template(&quot;{{ x }}!&quot;), Dict(&quot;x&quot; =&gt; &quot;hi&quot;));
+
+julia&gt; String(take!(io))
+&quot;hi!&quot;</code></pre></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../">« Home</a><a class="docs-footer-nextpage" href="../templates/">Template reference »</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="auto">Automatic (OS)</option><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option><option value="catppuccin-latte">catppuccin-latte</option><option value="catppuccin-frappe">catppuccin-frappe</option><option value="catppuccin-macchiato">catppuccin-macchiato</option><option value="catppuccin-mocha">catppuccin-mocha</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 1.19.0 on <span class="colophon-date" title="Thursday 3 September 2026 10:20">Thursday 3 September 2026</span>. Using Julia version 1.12.7.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
