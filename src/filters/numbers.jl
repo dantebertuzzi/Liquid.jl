@@ -129,6 +129,9 @@ function round_filter(input, places = 0)
     digits = digits === nothing ? 0 : trunc(Int, digits)
     digits > 0 && return round(float(value); digits)
     digits < 0 && return Int(round(float(value); digits))
+    # An integer is already rounded.  Handled separately because
+    # `round(Int, ::Integer, ::RoundingMode)` has no method before Julia 1.11.
+    value isa Integer && return Int(value)
     # Liquid rounds a half away from zero (2.5 becomes 3); Julia's default
     # rounds halves to even, so the mode has to be given explicitly.
     return round(Int, value, RoundNearestTiesAway)

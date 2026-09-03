@@ -45,6 +45,10 @@ f(src) = render("{{ " * src * " }}")
         @test f("5.666 | round: 1") == "5.7"
         @test f("5.666 | round: 0") == "6"
         @test f("5.666 | round: -2") == "0"
+        # An integer input: `round(Int, ::Integer, ::RoundingMode)` has no
+        # method before Julia 1.11, so this needs its own path.
+        @test f("5 | round") == "5"
+        @test f("-5 | round") == "-5"
         # Halves round away from zero, not to even as Julia does by default.
         @test f("2.5 | round") == "3"
         @test f("3.5 | round") == "4"

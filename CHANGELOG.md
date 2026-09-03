@@ -53,6 +53,10 @@ contradicts itself on, marking the same template valid under one strictness
 mode and invalid under another; the third asks that slicing a range use the
 range's string representation.
 
+### Compatibility
+
+Tested on Julia 1.10, 1.12 and nightly, on Linux, macOS and Windows.
+
 ### Security
 
 Rendering a template never evaluates Julia code. There is no `eval`, no
