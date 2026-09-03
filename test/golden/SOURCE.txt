@@ -1,0 +1,3 @@
+65c2f76ea64ef20647c295b000df5fcd9fc471cd 2026-06-18T07:19:35Z
+https://github.com/jg-rp/golden-liquid  (golden_liquid.json)
+Vendored so the suite is reproducible and does not need network access in CI.

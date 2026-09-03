@@ -1,0 +1,3 @@
+identifiers, only digits, self
+range, slice uses range string representation
+tags, case, unexpected when token

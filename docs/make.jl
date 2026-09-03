@@ -14,7 +14,14 @@ makedocs(;
     ),
     pages=[
         "Home" => "index.md",
+        "Passing data" => "data.md",
+        "Template reference" => "templates.md",
+        "Extending" => "extending.md",
+        "API" => "api.md",
     ],
+    # Every exported name must be documented; internals are documented as they
+    # are needed rather than exhaustively.
+    checkdocs=:exports,
 )
 
 deploydocs(;
