@@ -1,0 +1,7 @@
+name = "Liquid"
+uuid = "1d842bea-57fe-42da-9535-7d22f6992377"
+authors = ["Dante Bertuzzi <dantesbertuzzi@gmail.com>"]
+version = "1.0.0-DEV"
+
+[compat]
+julia = "1.10"
