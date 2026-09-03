@@ -1,6 +1,6 @@
-<img src="docs/src/assets/logo.png" align="right" width="120" alt="Liquid.jl logo">
-
 # Liquid.jl
+
+<img src="docs/src/assets/logo.png" align="right" width="120" alt="Liquid.jl logo">
 
 [![Build Status](https://github.com/dantebertuzzi/Liquid.jl/actions/workflows/CI.yml/badge.svg?branch=main)](https://github.com/dantebertuzzi/Liquid.jl/actions/workflows/CI.yml?query=branch%3Amain)
 [![Coverage](https://codecov.io/gh/dantebertuzzi/Liquid.jl/branch/main/graph/badge.svg)](https://codecov.io/gh/dantebertuzzi/Liquid.jl)
