@@ -1,7 +1,7 @@
 name = "Liquid"
 uuid = "1d842bea-57fe-42da-9535-7d22f6992377"
 authors = ["Dante Bertuzzi <dantesbertuzzi@gmail.com>"]
-version = "0.1.0-DEV"
+version = "0.1.0"
 
 [deps]
 Dates = "ade2ca70-3891-5945-98fb-dc099432e06a"

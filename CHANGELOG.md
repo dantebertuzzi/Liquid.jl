@@ -5,9 +5,9 @@ All notable changes to this project are documented in this file.
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [0.1.0] - 2026-09-03
 
-First release in preparation. Nothing has been tagged yet.
+First release.
 
 ### Added
 
@@ -62,3 +62,5 @@ Tested on Julia 1.10, 1.12 and nightly, on Linux, macOS and Windows.
 Rendering a template never evaluates Julia code. There is no `eval`, no
 `getproperty` and no reflection on the render path; a test asserts this against
 the package source itself, so the invariant fails loudly if it is ever broken.
+
+[0.1.0]: https://github.com/dantebertuzzi/Liquid.jl/releases/tag/v0.1.0
