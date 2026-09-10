@@ -4,3 +4,4 @@ Liquid = "1d842bea-57fe-42da-9535-7d22f6992377"
 
 [compat]
 Documenter = "1.19.0"
+Liquid = "0.1.0"
