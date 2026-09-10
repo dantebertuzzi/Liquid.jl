@@ -7,3 +7,4 @@ Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
 [compat]
 Aqua = "0.8"
 JSON = "0.21, 1"
+Liquid = "0.1.0"
